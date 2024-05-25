@@ -115,11 +115,11 @@
    
  7. Add / uncomment below to `nagios.cgi` file.
 
-   `sudo nano /usr/local/nagios/etc/nagios.cfg`
+      `sudo nano /usr/local/nagios/etc/nagios.cfg`
 
-   `cfg_dir=/usr/local/nagios/etc/services`
+      `cfg_dir=/usr/local/nagios/etc/services`
 
-   Save the file
+      Save the file
  
 ## 3. Verify Nagios Configuration
  
@@ -137,11 +137,11 @@
  
 ## 4. Access Nagios Web Interface
 
-Open your web browser and access Nagios web interface via the URL `http://ServerIP/nagios`. For my case:
+   Open your web browser and access Nagios web interface via the URL `http://ServerIP/nagios`. For my case:
 
-`http://192.168.122.162/nagios`
+   `http://192.168.122.162/nagios`
 
-You have successfully installed Nagios Core on your server. To log in, use admin as your username and the password you set during the user account creation step as your password. You can now access the dashboard and begin configuring Nagios.
+   You have successfully installed Nagios Core on your server. To log in, use admin as your username and the password you set during the user account creation step as your password. You can now access the dashboard and begin configuring Nagios.
 
 ## 5. Add Remote Hosts
 
