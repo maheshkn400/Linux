@@ -153,7 +153,7 @@ First, install nagios-plugins and nagios-nrpe-server:
 
 ## Configure NRPE
 
-open the /etc/nagios/nrpe.cfg file. Replace the value of `allowed_hosts` with `127.0.0.1,0.0.0.0` and `server_address` with `0.0.0.0`
+open the /etc/nagios/nrpe.cfg file. Replace the value of `allowed_hosts` with `127.0.0.1,nagios_server_IP` and `server_address` with `0.0.0.0`
 
 Save the file when you are finished.
 
