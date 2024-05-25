@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
- - Deploy a fully updated Vultr Ubuntu 20.04 Server.
+ - Deploy a fully updated Ubuntu 20.04 Server.
  - Create a non-root user with sudo access.
 
 ## 1. Install and Configure Nagios Core
@@ -83,19 +83,16 @@
 
       `sudo vi /usr/local/nagios/etc/cgi.cgi`
  
- NOTE: For bulk replace in vi enter as below 
- `:%s/nagiosadmin/nagiosadmin,admin/gi`
- and save the file 
+ NOTE: For bulk replace in vi enter as below `:%s/nagiosadmin/nagiosadmin,admin/gi` and save the file 
 
 ## 2. Install Nagios Plugins
  
  1. Download the Nagios Core plugin. To download the latest plugins, visit the plugins download page.
 
-    `
-    cd ~/`
+    `cd ~/`
 
-    `wget https://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz
-    `
+    `wget https://nagios-plugins.org/download/nagios-plugins-2.3.3.tar.gz`
+
  2. Extract the downloaded plugin.
 
     `sudo tar -zxvf nagios-plugins-2.3.3.tar.gz`
@@ -115,6 +112,14 @@
  6. Install the plugins.
 
     `sudo make install`
+   
+ 7. Add / uncomment below to `nagios.cgi` file.
+
+   `sudo nano /usr/local/nagios/etc/nagios.cfg`
+
+   `cfg_dir=/usr/local/nagios/etc/services`
+
+   Save the file
  
 ## 3. Verify Nagios Configuration
  
