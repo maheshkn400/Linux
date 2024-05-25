@@ -188,5 +188,5 @@ restart NRPE:
   `sudo systemctl restart nagios` or `sudo systemctl reload nagios`
   
 
-### Add [USB monitor](usb-monitor.md) to nagios server 
+### Add [USB monitor](/Ubuntu/nagios/nagios-configuration_of_check_usb.md) to nagios server 
 
