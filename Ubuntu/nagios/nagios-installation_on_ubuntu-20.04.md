@@ -81,7 +81,7 @@
  
  19. provide access to 'admin' user to monitor the hosts and services
 
-      `sudo vi /usr/local/nagios/etc/cgi.cgi`
+      `sudo vi /usr/local/nagios/etc/cgi.cfg`
  
  NOTE: For bulk replace in vi enter as below `:%s/nagiosadmin/nagiosadmin,admin/gi` and save the file 
 
@@ -185,13 +185,27 @@ restart NRPE:
     ```
     
       save the file
+  2. Uncomment following in `/usr/local/nagios/etc/nagios.cfg` file.
   
-  2. Verify nagios configuration files syntax
-  `sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg`
-  
-  3. restart or reload the nagios servie
-  `sudo systemctl restart nagios` or `sudo systemctl reload nagios`
-  
+      Open file
 
-### Add [USB monitor](/Ubuntu/nagios/nagios-configuration_of_check_usb.md) to nagios server 
+      `sudo nano /usr/local/nagios/etc/nagios.cfg`
+
+      Uncomment below and save the file
+
+      `cfg_file=/usr/local/nagios/etc/services.cfg`
+
+  3. Verify nagios configuration files syntax
+  
+      `sudo /usr/local/nagios/bin/nagios -v /usr/local/nagios/etc/nagios.cfg`
+  
+  4. restart or reload the nagios servie
+  
+      `sudo systemctl restart nagios` or `sudo systemctl reload nagios`
+
+Open your web browser and access Nagios web interface via the URL `http://ServerIP/nagios`. For my case:
+
+   `http://192.168.122.162/nagios`
+
+### To monitor and report a remote host USB, you can refer to the guide on configuring USB checks in Nagios for Ubuntu. You can find it at [USB](/Ubuntu/nagios/nagios-configuration_of_check_usb.md). 
 

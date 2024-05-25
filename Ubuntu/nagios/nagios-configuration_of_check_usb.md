@@ -151,7 +151,7 @@ save the file.
 
  3. Defile nagios client or remote host in nagios server
 
-    `sudo nano /usr/local/nagios/etc/servers/hosts.cfg`
+    `sudo nano /usr/local/nagios/etc/servers/host.cfg`
  
     ```
     define host {
