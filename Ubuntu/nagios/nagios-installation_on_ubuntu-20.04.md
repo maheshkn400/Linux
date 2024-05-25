@@ -81,7 +81,7 @@
  
  19. provide access to 'admin' user to monitor the hosts and services
 
-      `sudo vi /usr/local/nagios/cgi.cgi`
+      `sudo vi /usr/local/nagios/etc/cgi.cgi`
  
  NOTE: For bulk replace in vi enter as below 
  `:%s/nagiosadmin/nagiosadmin,admin/gi`

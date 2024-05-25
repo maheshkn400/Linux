@@ -99,17 +99,20 @@ save the file.
 
 ## 3. Follow the below steps in `nagios client/remote` host
 
- 1. Add and updat `/etc/nagios/nrpe.cfg ` as follows
+ 1. Add and update `/etc/nagios/nrpe.cfg ` as follows
  
     `sudo nano /etc/nagios/nrpe.cfg`
-  - add below 	
-    `command[check_usb]=/usr/local/nagios/libexec/check_usb.sh`
-  - change below fields as below
 
-    ```
-    server_address=0.0.0.0
-    server_port=5666
-    ```
+    - add below
+    
+        `command[check_usb]=/usr/local/nagios/libexec/check_usb.sh`
+        
+    - change fields as below
+
+        ```
+        server_address=0.0.0.0
+        server_port=5666
+        ```
 
  2. Restart `nagios-nrpe-server` service
 
@@ -120,16 +123,18 @@ save the file.
     `sudo ss -at | grep nrpe` or `sudo netstate -at | grep nrpe`
     `sudo ss -ntpl | grep 5666` or `sudo netstate -ntpl | grep 5666`
   
-## 4. Follow the below steps in `nagios server` host
+## 4. Follow the below steps in `nagios server` to add remote host.
 
  1. Verify nagios server and client/remote hosts communication
 
     `telnet remote_host_ip 5666`
+
     `/usr/local/nagios/libexec/check_nrpe -H client-r-remote_host_ip -c check_usb`
  
     my case `192.168.122.145`
 
     `telnet 192.168.122.145 5666`
+
     `/usr/local/nagios/libexec/check_nrpe -H 192.168.122.145 -c check_usb`
   
  
