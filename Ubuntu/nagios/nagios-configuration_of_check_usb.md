@@ -86,6 +86,8 @@
 
 save the file.
 
+__Any issue to copy above code download this file [check_usb](/Ubuntu/nagios/check_usb)__
+
 ### NOTE: change USB ID 0a12:0001 with your USB ID
 
  2. set script executable

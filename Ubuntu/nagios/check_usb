@@ -1,0 +1,45 @@
+#!/bin/bash
+
+DEVICE_ID="0a12:0001"
+STATE_FILE="/tmp/usb_state_$DEVICE_ID.txt"
+
+
+if ! command -v lsusb &> /dev/null; then
+    echo "UNKNOWN: lsusb command not found"
+    exit 3
+fi
+
+CURRENT_STATE=$(lsusb | grep -c "$DEVICE_ID")
+
+
+if [ ! -f "$STATE_FILE" ]; then
+    echo "$CURRENT_STATE" > "$STATE_FILE"
+    if [ "$CURRENT_STATE" -eq 1 ]; then
+        echo "OK: USB device $DEVICE_ID is currently connected."
+        exit 0
+    else
+        echo "CRITICAL: USB device $DEVICE_ID is not connected."
+        exit 2
+    fi
+fi
+ 
+PREVIOUS_STATE=$(cat "$STATE_FILE")
+
+if [ "$CURRENT_STATE" -ne "$PREVIOUS_STATE" ]; then
+    echo "$CURRENT_STATE" > "$STATE_FILE"
+    if [ "$CURRENT_STATE" -eq 1 ]; then
+        echo "CRITICAL: USB device $DEVICE_ID has been plugged in."
+        exit 2
+    else
+        echo "CRITICAL: USB device $DEVICE_ID has been unplugged."
+        exit 2
+    fi
+else
+    if [ "$CURRENT_STATE" -eq 1 ]; then
+        echo "OK: USB device $DEVICE_ID is connected."
+        exit 0
+    else
+        echo "CRITICAL: USB device $DEVICE_ID is not connected."
+        exit 2
+    fi
+fi
