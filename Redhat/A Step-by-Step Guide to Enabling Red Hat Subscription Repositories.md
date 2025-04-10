@@ -1,4 +1,4 @@
-** A Step-by-Step Guide to Enabling Red Hat Subscription Repositories  
+## A Step-by-Step Guide to Enabling Red Hat Subscription Repositories  
 
 1. Register Redhat Subscription
 
