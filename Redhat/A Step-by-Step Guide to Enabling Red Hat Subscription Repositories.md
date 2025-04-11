@@ -11,7 +11,7 @@ It will prompt for username and password and enter the Redhat subscription manag
 2. list available subscription
 
 ```bash
-sudo subscription-manager list --avaialbe
+sudo subscription-manager list --available
 ```
 
 3. attache the subscription
