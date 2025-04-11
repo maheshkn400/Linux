@@ -5,6 +5,7 @@ Linux Tutorials - Install, Configure of differ Linux OS and services like httpd,
 
 - Redhat
   - [A Step by Step Guide to Enabling Red Hat Subscription and Repository](/Redhat/A%20Step-by-Step%20Guide%20to%20Enabling%20Red%20Hat%20Subscription%20Repositories.md)
+  - [How to LVM in Redhat](/Redhat/How-to-LVM_Logical-Volume-Management.md)
 
 - Ubuntu
 	- Nagios
